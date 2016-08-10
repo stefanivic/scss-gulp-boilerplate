@@ -1,0 +1,29 @@
+{
+  "name": "scss-gulp-boilerplate",
+  "description": "SCSS and Gulp boilerplate based on ITCSS methodology.",
+  "main": "",
+  "authors": [
+    "Stefan Ivić"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "BEM",
+    "ITCSS",
+    "SCSS",
+    "Gulp",
+    "boilerplate"
+  ],
+  "homepage": "https://github.com/stefanivic/scss-gulp-boilerplate",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "susy": "^2.2.12"
+  }
+}

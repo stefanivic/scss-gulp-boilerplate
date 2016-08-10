@@ -1,0 +1,41 @@
+// Mixin to add width and height to a class. Usage example :
+//  .class {
+//    @include size(500px,500px);
+//  }
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Mixin to create media-queries. It checks the _variables.scss to find
+// a speficic $breakpoint. If the breakpoint is not defined it trows
+// a warning. Breakpoints are medium, large and huge. Usage example :
+// .class {
+//   @include respond-to(medium);
+// }
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }@else
+  {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+//  Mixin to add a clearfix to your code.
+//  @author Nicolas Gallagher
+//  @link http://nicolasgallagher.com/micro-clearfix-hack/ Micro Clearfix
+//  Usage example :
+//  .class {
+//    @include clearfix;
+//  }
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}

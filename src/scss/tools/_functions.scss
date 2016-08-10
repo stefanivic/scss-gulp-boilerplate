@@ -1,0 +1,7 @@
+// Function to convert px to ems. Usage example :
+// h1 {
+//  font-size : calc-em(32);
+// }
+@function calc-em($target, $context: $base__font-size) {
+  @return ($target / $context) * 1em;
+}
